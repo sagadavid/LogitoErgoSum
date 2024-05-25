@@ -21,7 +21,9 @@ public class WeatherForecastController : ControllerBase
     [HttpGet(Name = "GetWeatherForecast")]
     public IEnumerable<WeatherForecast> Get()
     {
-        _logger.Log(LogLevel.Information, "loggin message at information level");
+        //_logger.Log(LogLevel.Information, "loggin message at information level");
+        _logger.LogInformation("Loging message variant at info level");
+        _logger.LogTrace("log message at trace level");
 
         return Enumerable.Range(1, 5).Select(index => new WeatherForecast
         {
